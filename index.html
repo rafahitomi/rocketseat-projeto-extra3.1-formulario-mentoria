@@ -5,7 +5,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário Mentoria</title>
 
@@ -13,9 +12,13 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Staatliches&display=swap" rel="stylesheet">
 
+    <link rel="shortcut icon" href="images/icon.png">
+
   </head>
+
   <body>
     <div class="page">
+
       <header class="cabecalho">
         <h1 class="cabecalho__titulo">Mentoria</h1>
         <p class="cabecalho__texto">Preencha o formulário abaixo para agendar a sua mentoria</p>
@@ -26,29 +29,28 @@
         <fieldset>
           <div class="fieldset__wrapper">
             <legend>Informações pessoais</legend>
-
+            
             <div class="name__surname">
               <div class="input__wrapper">
-                <label for="event-name">Nome</label>
-                <input type="text" id="event-name">
+                <label for="name">Nome</label>
+                <input type="text" id="name">
               </div>
-
               <div class="input__wrapper">
-                <label for="event-surname">Sobrenome</label>
-                <input type="text" id="event-surname">
+                <label for="surname">Sobrenome</label>
+                <input type="text" id="surname">
               </div>
             </div>
-
+  
             <div class="input__wrapper">
-              <label for="event-email">Email <span>(digite um email válido)</span></label>
-              <input type="email" id="event-email">
+              <label for="email">Email <span>(digite um email válido)</span></label>
+              <input type="email" id="email" required>
             </div>
-
+  
             <div class="input__wrapper">
-              <label for="event-password">Senha <span>(mínimo de 6 caracteres)</span></label>
-              <input type="password" id="event-password">
+              <label for="password">Senha <span>(mínimo de 6 caracteres)</span></label>
+              <input type="password" id="password">
             </div>
-
+  
           </div>
         </fieldset>
 
@@ -57,8 +59,8 @@
             <legend>Informações do mentor</legend>
 
             <div class="input__wrapper">
-              <label for="event-name">Nome do seu mentor <span>(só o primeiro nome)</span> </label>
-              <input type="text" id="event-name">
+              <label for="mentor-name">Nome do seu mentor <span>(só o primeiro nome)</span> </label>
+              <input type="text" id="mentor-name" required>
             </div>
 
           </div>
@@ -68,39 +70,43 @@
           <div class="fieldset__wrapper">
             <legend>Seus horários disponíveis</legend>
         
-            <p class="titulo__mentoria">Primeira mentoria</p>
-            <div class="col-3">
+            <h3 class="titulo__mentoria">Primeira mentoria</h3>
+
+            <div class="mentoring__schedule">
+              
               <div class="input__wrapper">
-                <label for="event-date">Data <span>(DD/MM/AAAA)</span></label>
-                <input type="date" id="event-date">
+                <label for="date">Data <span>(DD/MM/AAAA)</span></label>
+                <input type="date" id="date" min="2023-04-17" max="2123-01-01">
               </div>
   
               <div class="input__wrapper">
-                <label for="event-begin">Das</label>
-                <input type="time" id="event-begin">
+                <label for="begin">Das</label>
+                <input type="time" id="begin">
               </div>
 
               <div class="input__wrapper">
-                <label for="event-end">Até</label>
-                <input type="time" id="event-end">
+                <label for="end">Até</label>
+                <input type="time" id="-end">
               </div>
+
             </div>
 
-            <p class="titulo__mentoria">Segunda mentoria</p>
-            <div class="col-3">
+            <h3 class="titulo__mentoria">Segunda mentoria</h3>
+            
+            <div class="mentoring__schedule">
               <div class="input__wrapper">
-                <label for="event-date">Data <span>(DD/MM/AAAA)</span></label>
-                <input type="date" id="event-date">
+                <label for="date">Data <span>(DD/MM/AAAA)</span></label>
+                <input type="date" id="date" min="2023-04-17" max="2123-01-01">
               </div>
   
               <div class="input__wrapper">
-                <label for="event-begin">Das</label>
-                <input type="time" id="event-begin">
+                <label for="begin">Das</label>
+                <input type="time" id="begin">
               </div>
 
               <div class="input__wrapper">
-                <label for="event-end">Até</label>
-                <input type="time" id="event-end">
+                <label for="end">Até</label>
+                <input type="time" id="end">
               </div>
             </div>
 
@@ -112,6 +118,7 @@
       <footer>
         <input form="my-form" class="button" type="submit" value="Salvar">
       </footer>
+
     </div>
   </body>
 </html>
