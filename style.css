@@ -8,6 +8,8 @@
   --cor-texto-hover: #706f70;
   --cor-fundo-input: #FAFAFC;
   --cor-fundo-borda: #E6E6F0;
+
+  font-size: 62.5%;
 }
 
 * {
@@ -16,12 +18,17 @@
   box-sizing: border-box;
 }
 
-body {
+body, input {
   font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: var(--cor-texto-descricao);
+}
+
+body {
   background: var(--cor-fundo);
 }
 
-body::before { /* todo quadrado do background mais escuro */
+body::before {
   content: '';
   width: 100%;
   height: 436px;
@@ -29,44 +36,56 @@ body::before { /* todo quadrado do background mais escuro */
   
   position: absolute;
   top: 0;
+  left: 0;
   z-index: -1;
 }
 
-.page { /* definir a largura do cabeçalho e formulário */
+.page {
   width: 750px;
   margin: auto;
 }
 
 
 /* CABEÇALHO */
+.cabecalho__titulo, fieldset legend, .titulo__mentoria, .button {
+  font-family: 'Staatliches', cursive;
+  font-weight: 400;
+}
+
 .cabecalho {
   width: 417px;
   margin-top: 140px;
 }
 
-.cabecalho__titulo {
+.cabecalho__titulo, legend, .titulo__mentoria, footer input {
   font-family: 'Staatliches', cursive;
+}
+
+.cabecalho__titulo {
   font-weight: 400;
   font-size: 48px;
   line-height: 60px;
   color: var(--cor-texto-footer);
+
   margin-bottom: 18px;
 }
 
 .cabecalho__texto {
+  font-weight: 400;
   font-size: 20px;
   line-height: 30px;
   color: var(--cor-texto-footer);
+
+  margin-bottom: 58px;
 }
 
 
 /* FORMULÁRIO */
 form {
-  margin-top: 58px;
   background: var(--cor-texto-footer);
   border-radius: 20px 20px 0px 0px;
-  min-height: 345px;
 
+  min-height: 345px;
   padding: 64px;
 
   display: flex;
@@ -85,14 +104,13 @@ fieldset {
 }
 
 legend {
-  font-family: 'Staatliches', cursive;
   font-size: 24px;
   line-height: 34px;
   color: var(--cor-footer);
 
-  width: 100%; /* estilização da linha inferior a Informações Pessoais */
-  padding-bottom: 16px;
+  width: 100%;
   border-bottom: 1px solid var(--cor-fundo-borda);
+  padding-bottom: 8px;
 }
 
 .name__surname {
@@ -113,14 +131,16 @@ legend {
   font-size: 14px;
   line-height: 24px;
   color: var(--cor-texto-descricao);
+
   margin-bottom: 8px;
 }
 
 .input__wrapper label span { /* estilização do título do campo sugestão */
-  margin-left: 5px;
   font-size: 12px;
   line-height: 20px;
   color: var(--cor-texto-sugestao);
+
+  margin-left: 5px;
 }
 
 .input__wrapper label span:hover { /* para acessibilidade */
@@ -140,22 +160,61 @@ legend {
   color: var(--cor-texto-hover);
 }
 
-.col-3 {
-  display: flex;
-  gap: 32px;
+.input__wrapper input::-webkit-datetime-edit{
+  min-width: 100%;
+  width: 100%;
 }
 
-
 .titulo__mentoria {
-  font-family: 'Staatliches', cursive;
   font-size: 20px;
   line-height: 34px;
   color: #535971;
 }
 
+.mentoring__schedule {
+  display: flex;
+  gap: 10px;
+}
 
+.mentoring__schedule > div:nth-child(1) {
+  width: 100%;
+  margin-right: 22px;
+}
 
+input:invalid {
+  border: 1px solid var(--cor-texto-descricao);
+}
 
+/* RODAPÉ */
+footer {
+  background: var(--cor-footer);
+  border-radius: 0px 0px 20px 20px;
+  
+  height: 160px;
+  margin-bottom: 200px;
 
+  display: flex;
+  flex-direction: column;
+  
+  padding: 52px 71px;
+  
+}
 
-/* font-family: 'Staatliches', cursive; */
+footer .button {
+  height: 56px;
+  background: var(--cor-botao);
+  border-radius: 20px;
+  border: none;
+
+  font-size: 20px;
+  line-height: 26px;
+  color: var(--cor-texto-footer);
+
+  padding: 15px 40px;
+
+  cursor: pointer;
+}
+
+footer .button:hover {
+  background: #F73F64;
+}
